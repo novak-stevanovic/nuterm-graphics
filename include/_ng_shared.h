@@ -1,7 +1,5 @@
-#ifndef __NUI_SHARED_H__
-#define __NUI_SHARED_H__
-
-#include "nt_shared.h"
+#ifndef __NG_SHARED_H__
+#define __NG_SHARED_H__
 
 #define _return(ret_val, out_status_param, out_status)                         \
     do                                                                         \
@@ -19,4 +17,4 @@
         return;                                                                \
     } while(0);                                                                \
 
-#endif // __NUI_SHARED_H__
+#endif // __NG_SHARED_H__

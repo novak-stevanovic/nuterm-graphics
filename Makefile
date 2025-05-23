@@ -23,7 +23,7 @@ OPT_FLAG = -O$(OPT)
 
 # ---------------------------------------------------------
 
-LIB_NAME = nui
+LIB_NAME = ng
 LIB_PC = $(LIB_NAME).pc
 
 CC = gcc
