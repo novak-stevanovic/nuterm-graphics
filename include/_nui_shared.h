@@ -1,6 +1,8 @@
 #ifndef __NUI_SHARED_H__
 #define __NUI_SHARED_H__
 
+#include "nt_shared.h"
+
 #define _return(ret_val, out_status_param, out_status)                         \
     do                                                                         \
     {                                                                          \

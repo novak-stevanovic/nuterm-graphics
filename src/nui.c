@@ -2,6 +2,7 @@
 #include "_nui_shared.h"
 #include "nui_shared.h"
 #include "pthread.h"
+#include "nuterm.h"
 
 static pthread_t _nui_thread;
 static void* (*_init_gui_func)(void* data) = NULL; 
@@ -17,6 +18,17 @@ void nui_launch(void* (*init_gui_func)(void* data), void* data,
 {
     if(init_gui_func == NULL)
         _vreturn(out_status, NUI_ERR_INVALID_ARG);
+
+    nt_status_t _status;
+    nt_init(&_status);
+    switch(_status)
+    {
+        // TODO handle other cases
+        case NT_ERR_ALLOC_FAIL:
+            _vreturn(out_status, NUI_ERR_UNEXPECTED);
+        default:
+            _vreturn(out_status, NUI_ERR_UNEXPECTED);
+    }
 
     _init_gui_func = init_gui_func;
     _init_gui_func_data = data;
