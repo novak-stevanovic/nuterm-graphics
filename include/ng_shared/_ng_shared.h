@@ -6,7 +6,7 @@
     {                                                                          \
         if((out_status_param) != NULL)                                         \
             (*out_status_param) = (out_status);                                \
-        return (ret_val)                                                       \
+        return (ret_val);                                                      \
     } while(0);                                                                \
 
 #define _vreturn(out_status_param, out_status)                                 \

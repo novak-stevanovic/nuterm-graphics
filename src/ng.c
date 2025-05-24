@@ -1,10 +1,9 @@
 #include "ng.h"
-#include "_ng_shared.h"
-#include "ng_shared.h"
+#include "ng_shared/_ng_shared.h"
 #include "pthread.h"
 #include "nuterm.h"
-#include "ng_display.h"
-#include "ng_draw_engine.h"
+#include "ng_core/ng_display.h"
+#include "ng_core/ng_draw_engine.h"
 
 static pthread_t _ng_thread;
 static void* (*_init_gui_func)(void* data) = NULL; 

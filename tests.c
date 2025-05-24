@@ -1,5 +1,4 @@
 #include "ng.h"
-#include "ng_shared.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -22,5 +21,9 @@ int main(int argc, char *argv[])
     ng_destroy();
     printf("\rMT: Done. Exiting.\n");
 
+
+    // int n1[] = { 1, 2 };
+    // int* n2 = { 1, 2 };
+    //
     return 0;
 }

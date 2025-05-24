@@ -1,4 +1,4 @@
-#include "ng_draw_engine.h"
+#include "ng_core/ng_draw_engine.h"
 
 void __ng_draw_engine_init__()
 {

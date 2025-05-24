@@ -1,7 +1,7 @@
 #ifndef _NG_H_
 #define _NG_H_
 
-#include "ng_shared.h"
+#include "ng_shared/ng_status.h"
 
 void ng_launch(void* (*init_gui_func)(void* data), void* data,
         ng_status_t* out_status);
