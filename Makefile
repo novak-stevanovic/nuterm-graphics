@@ -28,7 +28,7 @@ endif
 
 # ---------------------------------------------------------
 
-LIB_NAME = ng
+LIB_NAME = ntg
 LIB_PC = $(LIB_NAME).pc
 
 CC = gcc

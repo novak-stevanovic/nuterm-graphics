@@ -1,5 +1,5 @@
-#ifndef __NG_SHARED_H__
-#define __NG_SHARED_H__
+#ifndef __NTG_SHARED_H__
+#define __NTG_SHARED_H__
 
 #define _return(ret_val, out_status_param, out_status)                         \
     do                                                                         \
@@ -17,4 +17,4 @@
         return;                                                                \
     } while(0);                                                                \
 
-#endif // __NG_SHARED_H__
+#endif // __NTG_SHARED_H__
