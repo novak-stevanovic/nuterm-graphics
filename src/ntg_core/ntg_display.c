@@ -52,7 +52,7 @@ void ntg_display_copy(ntg_cell_grid_t* canvas, struct ntg_xy pos)
     }
 }
 
-const ntg_cell_grid_t* ng_display_get_canvas()
+const ntg_cell_grid_t* ntg_display_get_canvas()
 {
     return _display;
 }

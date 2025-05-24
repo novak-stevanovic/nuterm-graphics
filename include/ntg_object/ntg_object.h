@@ -1,5 +1,5 @@
-#ifndef _NG_OBJECT_H_
-#define _NG_OBJECT_H_
+#ifndef _NTG_OBJECT_H_
+#define _NTG_OBJECT_H_
 
 #include "ntg_shared/ntg_xy.h"
 
@@ -16,4 +16,4 @@ struct ntg_xy ntg_object_get_position_rel(ntg_object_t* object);
 
 ntg_container_t* ntg_object_get_parent(ntg_object_t* object);
 
-#endif // _NG_OBJECT_H_
+#endif // _NTG_OBJECT_H_
