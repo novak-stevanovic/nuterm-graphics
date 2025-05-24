@@ -10,9 +10,9 @@
 
 struct ntg_object
 {
-    struct _ntg_container* parent;
+    struct ntg_container* parent;
 
-    struct ntg_xy position; // absolute
+    struct ntg_bounds bounds; // ABS
 
     /* Arrantge with constraints `constr`. Return used size. Up to parent to set position. */
     struct ntg_xy (*arrange_func)(struct ntg_object* self,

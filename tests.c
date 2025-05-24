@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void* init_gui_func(void* data)
+void init_gui_func(void* data)
 {
     printf("\rNTG: Sleeping...\n");
     sleep(3);
     printf("\rNTG: Done\n");
-    return NULL;
+    return;
 }
 
 int main(int argc, char *argv[])
@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
     printf("\rMT: Waiting for NTG thread.\n");
     ntg_destroy();
     printf("\rMT: Done. Exiting.\n");
-
 
     // int n1[] = { 1, 2 };
     // int* n2 = { 1, 2 };

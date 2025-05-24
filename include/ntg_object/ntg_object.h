@@ -11,8 +11,10 @@ struct ntg_xy ntg_object_arrange(ntg_object_t* object,
 
 void ntg_object_draw(ntg_object_t* object);
 
-struct ntg_xy ntg_object_get_position_abs(ntg_object_t* object);
-struct ntg_xy ntg_object_get_position_rel(ntg_object_t* object);
+struct ntg_bounds ntg_object_get_bounds(ntg_object_t* object);
+struct ntg_bounds ntg_object_get_bounds_rel(ntg_object_t* object);
+
+void ntg_object_set_bounds(ntg_object_t* object);
 
 ntg_container_t* ntg_object_get_parent(ntg_object_t* object);
 

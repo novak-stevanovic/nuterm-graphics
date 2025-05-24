@@ -4,17 +4,31 @@
 #include "nuterm.h"
 #include "ntg_core/ntg_display.h"
 #include "ntg_core/ntg_draw_engine.h"
+#include <assert.h>
 
 static pthread_t _ntg_thread;
-static void* (*_init_gui_func)(void* data) = NULL; 
+static ntg_init_gui_func_t _init_gui_func = NULL; 
 static void* _init_gui_func_data = NULL;
+
+#define NTG_TIMEOUT 16
 
 static void* _ntg_thread_func(void* data)
 {
-    return _init_gui_func(_init_gui_func_data);
+    _init_gui_func(_init_gui_func_data);
+
+
+    nt_status_t _status;
+    struct nt_event event;
+    // while(true)
+    // {
+        event = nt_wait_for_event(NTG_TIMEOUT, &_status);
+        assert(_status == NT_SUCCESS);
+    // }
+
+    return NULL;
 }
 
-void ntg_launch(void* (*init_gui_func)(void* data), void* data,
+void ntg_launch(void (*init_gui_func)(void* data), void* data,
         ntg_status_t* out_status)
 {
     if(init_gui_func == NULL)
