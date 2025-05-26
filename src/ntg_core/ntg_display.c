@@ -30,7 +30,7 @@ void __ntg_display_deinit__()
     ntg_cell_grid_destroy(_display);
 }
 
-void ntg_display_copy(ntg_cell_grid_t* canvas, struct ntg_xy pos)
+void ntg_display_draw(const ntg_cell_grid_t* canvas, struct ntg_xy pos)
 {
     size_t i, j;
     struct ntg_xy size = ntg_cell_grid_get_size(canvas);

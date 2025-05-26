@@ -46,8 +46,8 @@ ntg_cell_grid_t* ntg_cell_grid_new(struct ntg_xy size);
 void ntg_cell_grid_destroy(ntg_cell_grid_t* grid);
 
 /* Returns NULL if `buff` is NULL or given coordinates are out of bounds. */
-struct ntg_cell* ntg_cell_grid_at(ntg_cell_grid_t* grid, struct ntg_xy pos);
+struct ntg_cell* ntg_cell_grid_at(const ntg_cell_grid_t* grid, struct ntg_xy pos);
 
-struct ntg_xy ntg_cell_grid_get_size(ntg_cell_grid_t* grid);
+struct ntg_xy ntg_cell_grid_get_size(const ntg_cell_grid_t* grid);
 
 #endif // _NTG_CELL_H_

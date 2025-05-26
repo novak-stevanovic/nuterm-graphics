@@ -101,7 +101,7 @@ void ntg_cell_grid_destroy(ntg_cell_grid_t* grid)
     free(grid);
 }
 
-struct ntg_cell* ntg_cell_grid_at(ntg_cell_grid_t* grid, struct ntg_xy pos)
+struct ntg_cell* ntg_cell_grid_at(const ntg_cell_grid_t* grid, struct ntg_xy pos)
 {
     if(grid == NULL) return NULL;
 
@@ -111,7 +111,7 @@ struct ntg_cell* ntg_cell_grid_at(ntg_cell_grid_t* grid, struct ntg_xy pos)
         return &(grid->data[pos.y * grid->size.x + pos.x]);
 }
 
-struct ntg_xy ntg_cell_grid_get_size(ntg_cell_grid_t* grid)
+struct ntg_xy ntg_cell_grid_get_size(const ntg_cell_grid_t* grid)
 {
     if(grid == NULL)
         return (struct ntg_xy) {0};

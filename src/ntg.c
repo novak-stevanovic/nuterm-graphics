@@ -1,10 +1,11 @@
+#include <assert.h>
+
 #include "ntg.h"
 #include "ntg_shared/_ntg_shared.h"
 #include "pthread.h"
 #include "nuterm.h"
 #include "ntg_core/ntg_display.h"
 #include "ntg_core/ntg_draw_engine.h"
-#include <assert.h>
 
 static pthread_t _ntg_thread;
 static ntg_init_gui_func_t _init_gui_func = NULL; 
@@ -12,18 +13,31 @@ static void* _init_gui_func_data = NULL;
 
 #define NTG_TIMEOUT 16
 
+/*
+void set_bounds(ng_object_t* obj, struct ngt_bounds new)
+{
+    if(ngt_bounds_size(obj->bounds) != ngt_bounds_size(new))
+    {
+        obj->arrange_dirty = 1;
+    }
+}
+*/
+
 static void* _ntg_thread_func(void* data)
 {
     _init_gui_func(_init_gui_func_data);
 
-
     nt_status_t _status;
     struct nt_event event;
-    // while(true)
-    // {
+    while(true)
+    {
         event = nt_wait_for_event(NTG_TIMEOUT, &_status);
+
+        if(event.key_data.esc_key_data.esc_key == NT_ESC_KEY_F5)
+            break;
+
         assert(_status == NT_SUCCESS);
-    // }
+    }
 
     return NULL;
 }

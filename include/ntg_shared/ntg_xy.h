@@ -12,12 +12,12 @@ struct ntg_xy
 #define NTG_XY(xv, yv) ((struct ntg_xy) { .x = (xv), .y = (yv) })
 #define NTG_XY_NOSIZE ((struct ntg_xy) {0})
 
-struct ntg_constr
+struct ntg_constraints
 {
     struct ntg_xy min_size, max_size;
 };
 
-#define NTG_CONSTR(minsz, maxsz) ((struct ntg_constr) {                         \
+#define NTG_CONSTRAINTS(minsz, maxsz) ((struct ntg_constraints) {              \
     .min_size = ((struct ntg_xy) {                                             \
         .x = (((minsz).x <= (maxsz).x) ? minsz.x : maxsz.x)                    \
         .y = (((minsz).y <= (maxsz).y) ? minsz.y : maxsz.y)                    \
