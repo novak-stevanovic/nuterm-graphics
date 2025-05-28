@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
     ntg_destroy();
     printf("\rMT: Done. Exiting.\n");
 
+
     // int n1[] = { 1, 2 };
     // int* n2 = { 1, 2 };
     //
