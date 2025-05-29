@@ -1,32 +1,4 @@
-#ifndef _NTG_OBJECT_SHARED_H_
-#define _NTG_OBJECT_SHARED_H_
-
-#include "ntg_shared/ntg_xy.h"
-
-typedef struct ntg_object ntg_object_t;
-
-typedef struct ntg_cconstraints ntg_cconstraints_t;
-typedef struct ntg_cxys ntg_csizes_t;
-typedef struct ntg_cxys ntg_cpositions_t;
-
-/* ------------------------------------------------------ */
-
-typedef struct ntg_xy (*ntg_ideal_size_fn)(const ntg_object_t* self);
-
-typedef void (*ntg_constrain_fn)(const ntg_object_t* self,
-        ntg_cconstraints_t* out_cconstr);
-
-typedef struct nt_xy (*ntg_measure_fn)(const ntg_object_t* self,
-        struct ntg_constraints constr,
-        const ntg_csizes_t* csizes);
-
-typedef void (*ntg_arrange_fn)(const ntg_object_t* self,
-        const ntg_csizes_t* csizes,
-        ntg_cpositions_t* out_cpositions);
-
-typedef void (*ntg_draw_fn)(const ntg_object_t* self);
-
-/* -------------------------------------------------------------------------- */
+#include "ntg_object/ntg_drawable.h"
 
 ntg_cconstraints_t* ntg_cconstraints_create(size_t count);
 void ntg_cconstraints_destroy(ntg_cconstraints_t* constrs);
@@ -66,5 +38,3 @@ struct ntg_xy ntg_cpositions_at(const ntg_cpositions_t* positions, size_t idx);
 
 void ntg_cpositions_set(ntg_cpositions_t* positions, struct ntg_xy position,
         const ntg_object_t* child);
-
-#endif // _NTG_OBJECT_SHARED_H_

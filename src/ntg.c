@@ -4,24 +4,12 @@
 #include "ntg_shared/_ntg_shared.h"
 #include "pthread.h"
 #include "nuterm.h"
-#include "ntg_core/ntg_display.h"
-#include "ntg_core/ntg_draw_engine.h"
 
 static pthread_t _ntg_thread;
 static ntg_init_gui_func_t _init_gui_func = NULL; 
 static void* _init_gui_func_data = NULL;
 
 #define NTG_TIMEOUT 16
-
-/*
-void set_bounds(ng_object_t* obj, struct ngt_bounds new)
-{
-    if(ngt_bounds_size(obj->bounds) != ngt_bounds_size(new))
-    {
-        obj->arrange_dirty = 1;
-    }
-}
-*/
 
 static void* _ntg_thread_func(void* data)
 {
@@ -60,8 +48,6 @@ void ntg_launch(void (*init_gui_func)(void* data), void* data,
         default:
             _vreturn(out_status, NTG_ERR_UNEXPECTED);
     }
-    __ntg_display_init__();
-    __ntg_draw_engine_init__();
 
     _init_gui_func = init_gui_func;
     _init_gui_func_data = data;
@@ -78,8 +64,6 @@ void* ntg_destroy()
     void* _data;
     pthread_join(_ntg_thread, &_data);
 
-    __ntg_display_deinit__();
-    __ntg_draw_engine_deinit__();
     nt_destroy();
 
     return _data;

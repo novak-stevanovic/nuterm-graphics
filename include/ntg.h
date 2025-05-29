@@ -1,3 +1,9 @@
+/* TODO:
+ * 1. ntg_scene.h (ntg_scene_manager(?) & ntg_scene_renderer)
+ * 2. avoid malloc() in ntg_drawable.c (arena allocator)
+ * 3. ntg_cell.c
+ * 4. ntg_scene.c (map<ntg_object_t*, struct scene_node(?)>)
+ */
 #ifndef _NTG_H_
 #define _NTG_H_
 
